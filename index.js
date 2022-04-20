@@ -39,7 +39,14 @@ console.log(arr)
 //vogliamo una pagina 1 con html ed input text e un button, va inserito un numero da uno a nove. vanno stampate tutte le coppie di numeri che sommati sono uguali a quel numero
 
  let calcolatore1=()=> {
-    numero = document.getElementById("tra1e9").value
+    num = document.getElementById("tra1e9").value
+    const addendi = new Array
+    for(i=0;i<num;i++){
+      addendi.push(i,num-i)
+    }
+    let printa = document.getElementById('print')
+    printa.append(addendi)
+    
  }
 
 let invio = document.getElementById("invio")
