@@ -1,34 +1,27 @@
-//roba di Marta
-
-// corpo della tabella lista dei contatti
+// collehamenti al dom
 let wrapperBody = document.querySelector('#wrapperBody');
 
-// Pulsante per mostrare o nascondere la tabella
+
 let buttonShow = document.querySelector('#buttonShow');
 
-// In questo modo abbiamo catturato/selzionato tutta la tabella
+
 let tableContacts = document.querySelector('table')
 
-// Pulsante per aggiungere un nuovo contatto
 let buttonAdd = document.querySelector('#buttonAdd'); 
 
-// sono ripettivamente i campi input
 let inputName = document.querySelector('#inputName')
 let inputNumber = document.querySelector('#inputNumber');
 
-// input delete
 let inputNameDelete = document.querySelector('#inputNameDelete')
-// button delete
 let buttonDelete = document.querySelector('#buttonDelete')
 
-// input Name che mi permette di selezionare il nome di un contatto
+
 let inputIdName = document.querySelector('#inputIdName');
-// input Number che mi consente di aggiornare il numero del contatto
 let inputNumberUpdate = document.querySelector('#inputNumberUpdate')
-// button Update
+
 let buttonUpdate = document.querySelector('#buttonUpdate')
 
-// Oggetto rubrica che conterrà proprietà(es. contatti) e metodi(che ci serviranno per svolgere determinate funzionalità)
+// Oggetto rubrica che conterrà proprietà
 let rubrica = {
     'contatti': [
         {'id':1,'nome': 'Marta', 'numero': 3331111111},
@@ -37,17 +30,16 @@ let rubrica = {
         {'id':4,'nome': 'Nardino', 'numero': 3334444444}
     ],
     'createListContacts': function() {
-        /** Dobbiamo ciclare su tutti i contatti della rubrica */
+        /** cicliamo i contatti della rubrica */
         this.contatti.forEach(contatto => {
-            /** Creiamo una o più righe(record) vuoto */
             let rowContact = document.createElement('tr');
-            /** Riempio il record, appena creato, con le celle contenenti i dati del contatto */
+          
             rowContact.innerHTML = `
                 <td>${contatto.id}</td>
                 <td>${contatto.nome}</td>
                 <td>${contatto.numero}</td>
             `;
-            /** Per visualizzare il record, devo SEMPRE 'appenderlo'(inserirlo) all'interno del corpo della tabella(es. di un genitore = parent) */
+          
             wrapperBody.appendChild(rowContact)
         });
 
