@@ -29,7 +29,7 @@ let rubrica = {
         {'id':3,'nome': 'B', 'numero': 3333333333},
         {'id':4,'nome': 'Nardino', 'numero': 3334444444}
     ],
-    'createListContacts': function() {
+    createListContacts() {
         /** cicliamo i contatti della rubrica */
         this.contatti.forEach(contatto => {
             let rowContact = document.createElement('tr');
