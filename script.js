@@ -51,15 +51,15 @@ let rubrica = {
         `;
         wrapperFooter.appendChild(footerTotal)
     },
-    'aggiungiContatto': function(name, number) {
+    aggiungiContatto(name, number) {
         let newContact = {'nome': name, 'numero': number};
         this.contatti.push(newContact);
     },
-    'rimuovereContatto': function(name) {  
+    rimuovereContatto(name) {  
         let filteredContacts = this.contatti.filter(contatto => contatto.nome.toLowerCase() != name.toLowerCase());
         this.contatti = filteredContacts
     },
-    'modificaContatto': function(name, number) {
+    modificaContatto(name, number) {
         for(let i = 0; i < this.contatti.length; i++) {
             if(this.contatti[i].nome == name) {
                 this.contatti[i].numero = number;
